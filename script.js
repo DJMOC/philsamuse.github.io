@@ -32,5 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Load default page (home)
-  loadPage("acceuil.html");
+  loadPage("accueil.html");
 });
+
