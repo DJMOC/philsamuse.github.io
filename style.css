@@ -78,6 +78,9 @@ main {
 	backdrop-filter: blur(2px);
 	border-radius: 1rem;
 }
+#main-content {
+	transition: opacity 0.2s ease-in-out;
+}
 
 section {
 	margin-bottom: 3rem;
