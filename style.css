@@ -4,7 +4,7 @@ html, body {
 	height: 100%;
 	font-family: sans-serif;
 	color: white;
-	background: black url('assets/main/Phil_back.png') center/contain repeat;
+	background: black url('assets/main/Phil_back_low.png') center/contain repeat;
 	position: relative;
 	overflow-x: hidden;
 }
@@ -86,3 +86,4 @@ section {
 	margin-bottom: 3rem;
 
 }
+
