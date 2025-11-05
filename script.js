@@ -11,7 +11,7 @@ async function loadPage(page) {
 		setTimeout(() => {
 			main.innerHTML = html;
 			main.style.opacity = 1;
-		});
+		}, 500);
 	} catch (err) {
 		main.innerHTML = `<p style="color:red;">Impossible de charger la page demandée.<br>${err}</p>`;
 		main.style.opacity = 1;
@@ -63,4 +63,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	const page = getPageFromURL();
 	loadPage(page);
 	setActiveLink(page);
+
 });
