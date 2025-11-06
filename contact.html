@@ -15,28 +15,20 @@
 			"&#112;&#104;&#x69;&#x6C;", 
 			"&#115;&#101;&#x40;&#103;"
 		];
-		console.log(data);
-		
 		const link = document.createElement("a");
 		link.textContent = "";
 		let s = 0;
 		
 		for (let i = 0; i < data.length; i++) {
-			console.log(i);
 			const temp = document.createElement("textarea");
 			(function() {
 				s = (s + 3) % data.length;
-				console.log(s);
 				temp.innerHTML = data[s];
-				console.log(temp.innerHTML);
 				link.textContent += temp.value;
-				console.log(link.textContent);
 			})();
 			temp.remove();
-			console.log(link.textContent);
 		}
 
-		console.log(s);
 		link.href = `mailto:${link.textContent}`;
 		document.getElementById("email").appendChild(link);
 	</script>
@@ -46,6 +38,7 @@
 		ou simplement pour discuter de projets mécatroniques et créatifs.
 	</p>
 </section>
+
 
 
 
