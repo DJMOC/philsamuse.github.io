@@ -8,8 +8,19 @@ async function loadPage(page) {
 		const response = await fetch(page);
 		if (!response.ok) throw new Error(`Erreur HTTP ${response.status}`);
 		const html = await response.text();
+		const parser = new DOWMParser();
+		const doc = parser.parseFromString(html, "text/html");
+		const scripts = doc.querySelectorAll("script");
+		
 		setTimeout(() => {
 			main.innerHTML = html;
+			
+			for (const script of scripts) {
+				const nScript = document.createElement("script");
+				nScript.textContent = script.textContent;
+				main.appendChild(nScript);
+			}
+			
 			main.style.opacity = 1;
 		}, 200);
 	} catch (err) {
@@ -63,6 +74,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	const page = getPageFromURL();
 	loadPage(page);
 	setActiveLink(page);
-
 });
-
