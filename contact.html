@@ -8,37 +8,37 @@
 	<p id="email" style="font-weight:bold;"></p>
 
 	<script>
-		//document.addEventListener("DOMContentLoaded", () => {
-			const data = [
-				"&#x2E;&#x63;&#111;&#109;", 
-				"&#x73;&#x61;&#x6D;&#117;", 
-				"&#109;&#x61;&#105;&#108;", 
-				"&#112;&#104;&#x69;&#x6C;", 
-				"&#115;&#101;&#x40;&#103;"
-			];
-			console.log(data);
-			
-			const link = document.createElement("a");
-			link.textContent = "";
-			let s = 0;
-			
-			for (let i = 0; i < data.length; i++) {
-				console.log(i);
-				const temp = document.createElement("div");
-				(function() {
-					s = (s + 3) % data.length;
-					temp.innerHTML = data[s];
-					link.textContent += temp.value;
-				})();
-				temp.remove();
+		const data = [
+			"&#x2E;&#x63;&#111;&#109;", 
+			"&#x73;&#x61;&#x6D;&#117;", 
+			"&#109;&#x61;&#105;&#108;", 
+			"&#112;&#104;&#x69;&#x6C;", 
+			"&#115;&#101;&#x40;&#103;"
+		];
+		console.log(data);
+		
+		const link = document.createElement("a");
+		link.textContent = "";
+		let s = 0;
+		
+		for (let i = 0; i < data.length; i++) {
+			console.log(i);
+			const temp = document.createElement("textarea");
+			(function() {
+				s = (s + 3) % data.length;
+				console.log(s);
+				temp.innerHTML = data[s];
+				console.log(temp.innerHTML);
+				link.textContent += temp.value;
 				console.log(link.textContent);
-			}
+			})();
+			temp.remove();
+			console.log(link.textContent);
+		}
 
-			console.log(s);
-			link.href = `mailto:${link.textContent}`;
-			document.getElementById("email").appendChild(link);
-		//});
-		console.log("script");
+		console.log(s);
+		link.href = `mailto:${link.textContent}`;
+		document.getElementById("email").appendChild(link);
 	</script>
 
 	<p>
@@ -46,6 +46,7 @@
 		ou simplement pour discuter de projets mécatroniques et créatifs.
 	</p>
 </section>
+
 
 
 
