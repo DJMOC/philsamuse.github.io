@@ -1,44 +1,56 @@
 <section id="contact">
 	<h2>Contact</h2>
-	<p>
-		Pour toute question concernant mes projets ou une personnalisation d’un design existant,
-		vous pouvez me joindre à l’adresse suivante :
-	</p>
+	<label for="form-select">Raison du contact :</label>
+	<select id="form-select">
+		<option value="">-- Sélectionnez --</option>
+		<option value="achat">Achat d’un design existant</option>
+		<option value="projet">Projet personnalisé</option>
+		<option value="autre">Toute autres raison</option>
+	</select>
 
-	<p id="email" style="font-weight:bold;"></p>
-
+	<div id="form-container" style="margin-top: 2rem;">
+		<p>Veuillez sélectionner une option pour afficher le formulaire.</p>
+	</div>
+	
 	<script>
 	(function() {
-		const data = [
-			"&#x2E;&#x63;&#111;&#109;", 
-			"&#x73;&#x61;&#x6D;&#117;", 
-			"&#109;&#x61;&#105;&#108;", 
-			"&#112;&#104;&#x69;&#x6C;", 
-			"&#115;&#101;&#x40;&#103;"
-		];
-		const link = document.createElement("a");
-		link.textContent = "";
-		let s = 0;
-		
-		for (let i = 0; i < data.length; i++) {
-			const temp = document.createElement("textarea");
-			(function() {
-				s = (s + 3) % data.length;
-				temp.innerHTML = data[s];
-				link.textContent += temp.value;
-			})();
-			temp.remove();
-		}
+		const forms = {
+			achat: `<iframe src="" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>`,
+			perso: `<iframe src="" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>`,
+			projet: `<iframe src="" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>`
+		};
 
-		link.href = `mailto:${link.textContent}`;
-		document.getElementById("email").appendChild(link);
+		document.getElementById("form-select").addEventListener("change", (e) => {
+			const container = document.getElementById("form-container");
+			const key = e.target.value;
+			container.innerHTML = forms[key] || "<p>Veuillez sélectionner une option pour afficher le formulaire.</p>";
+		});
+
+//		const data = [
+//			"&#x2E;&#x63;&#111;&#109;", 
+//			"&#x73;&#x61;&#x6D;&#117;", 
+//			"&#109;&#x61;&#105;&#108;", 
+//			"&#112;&#104;&#x69;&#x6C;", 
+//			"&#115;&#101;&#x40;&#103;"
+//		];
+//		const link = document.createElement("a");
+//		link.textContent = "";
+//		let s = 0;
+//		
+//		for (let i = 0; i < data.length; i++) {
+//			const temp = document.createElement("textarea");
+//			(function() {
+//				s = (s + 3) % data.length;
+//				temp.innerHTML = data[s];
+//				link.textContent += temp.value;
+//			})();
+//			temp.remove();
+//		}
+//
+//		link.href = `mailto:${link.textContent}`;
+//		document.getElementById("email").appendChild(link);
 	})();
 	</script>
-
-	<p>
-		Vous pouvez également me contacter pour des petites personnalisations, des collaborations intéressantes,
-		ou simplement pour discuter de projets mécatroniques et créatifs.
-	</p>
 </section>
 
 
