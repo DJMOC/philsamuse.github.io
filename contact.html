@@ -19,16 +19,18 @@
 			
 			const link = document.createElement("a");
 			link.textContent = "";
-			var s = 0;
+			let s = 0;
 			
-			for (var i = 0; i < data.length; i++) {
+			for (let i = 0; i < data.length; i++) {
+				console.log(i);
+				const temp = document.createElement("div");
 				(function() {
 					s = (s + 3) % data.length;
-					const temp = document.createElement("div");
 					temp.innerHTML = data[s];
 					link.textContent += temp.value;
-					temp.remove();
 				})();
+				temp.remove();
+				console.log(link.textContent);
 			}
 			
 			link.href = `mailto:${link.textContent}`;
@@ -41,6 +43,7 @@
 		ou simplement pour discuter de projets mécatroniques et créatifs.
 	</p>
 </section>
+
 
 
 
