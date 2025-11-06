@@ -8,6 +8,7 @@
 	<p id="email" style="font-weight:bold;"></p>
 
 	<script>
+	(function() {
 		const data = [
 			"&#x2E;&#x63;&#111;&#109;", 
 			"&#x73;&#x61;&#x6D;&#117;", 
@@ -31,6 +32,7 @@
 
 		link.href = `mailto:${link.textContent}`;
 		document.getElementById("email").appendChild(link);
+	})();
 	</script>
 
 	<p>
@@ -38,7 +40,6 @@
 		ou simplement pour discuter de projets mécatroniques et créatifs.
 	</p>
 </section>
-
 
 
 
