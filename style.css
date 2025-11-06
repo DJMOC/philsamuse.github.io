@@ -103,10 +103,9 @@ section {
 }
 #form-container iframe {
 	width: 100%;
-	height: auto;
-	min-height: 800px;
 	border: none;
 	frameborder: 0;
 	marginheight: 0;
 	marginwidth: 0;
 }
+
