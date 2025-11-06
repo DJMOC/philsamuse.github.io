@@ -15,15 +15,20 @@
 	<script>
 	(function() {
 		const forms = {
-			achat: `<iframe src="" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>`,
-			projet: `<iframe src="" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>`,
-			autre: `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejedMvMI9R5a-zdmADS-FeO164hDqCMm_FTpvadyic-cl4WQ/viewform?embedded=true" width="640" height="792" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>`
+			achat: `<iframe src="">Chargement…</iframe>`,
+			projet: `<iframe src="">Chargement…</iframe>`,
+			autre: `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejedMvMI9R5a-zdmADS-FeO164hDqCMm_FTpvadyic-cl4WQ/viewform?embedded=true">Loading…</iframe>`
 		};
 
 		document.getElementById("form-select").addEventListener("change", (e) => {
 			const container = document.getElementById("form-container");
 			const key = e.target.value;
-			container.innerHTML = forms[key] || "<p>Veuillez sélectionner une option pour afficher le formulaire.</p>";
+			container.style.opacity = 0;
+			
+			setTimeout(() => {
+				container.innerHTML = forms[key] || "<p>Veuillez sélectionner une option pour afficher le formulaire.</p>";
+				container.style.opacity = 1;
+			}, 200);
 		});
 
 //		const data = [
