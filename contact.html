@@ -16,6 +16,7 @@
 				"&#112;&#104;&#x69;&#x6C;", 
 				"&#115;&#101;&#x40;&#103;"
 			];
+			console.log(data);
 			
 			const link = document.createElement("a");
 			link.textContent = "";
@@ -32,7 +33,8 @@
 				temp.remove();
 				console.log(link.textContent);
 			}
-			
+
+			console.log(s);
 			link.href = `mailto:${link.textContent}`;
 			document.getElementById("email").appendChild(link);
 		});
@@ -43,6 +45,7 @@
 		ou simplement pour discuter de projets mécatroniques et créatifs.
 	</p>
 </section>
+
 
 
 
