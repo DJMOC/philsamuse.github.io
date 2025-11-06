@@ -87,10 +87,26 @@ section {
 }
 
 #form-select {
-  background-color: rgba(255,255,255,0.1);
-  color: black;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-
+	background-color: rgba(255,255,255,0.1);
+	color: black;
+	border: 1px solid rgba(255,255,255,0.3);
+	border-radius: 8px;
+	padding: 0.5rem 1rem;
+}
+#form-container {
+	width: 100%;
+	max-width: 900px;
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	transition: opacity 0.2s ease-in-out;
+}
+#form-container iframe {
+	width: 100%;
+	height: auto;
+	min-height: 800px;
+	border: none;
+	frameborder: 0;
+	marginheight: 0;
+	marginwidth: 0;
 }
