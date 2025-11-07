@@ -87,8 +87,8 @@ section {
 }
 
 #form-select {
-	background-color: rgba(255,255,255,0.1);
-	color: black;
+	background-color: rgba(32,32,32,0.1);
+	color: white;
 	border: 1px solid rgba(255,255,255,0.3);
 	border-radius: 8px;
 	padding: 0.5rem 1rem;
@@ -109,5 +109,6 @@ section {
 	marginheight: 0;
 	marginwidth: 0;
 }
+
 
 
